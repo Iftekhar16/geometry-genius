@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- logo -->
+    <link rel="icon" href="interactive-icon-7.jpg">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/41bd6fc6ae.js" crossorigin="anonymous"></script>
+    <!-- flaticons -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <title>Home</title>
+    <script>
+        tailwind.config={
+            theme: {
+                extend: {
+                    colors: {
+                        accentColor: "#E83046",
+                        text: "#ffffff",
+                        background1: "#2c2c2c",
+                        background2: "#1E1E1E",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="font-[poppins] relative">
+
+    <style>
+        ::-webkit-scrollbar-track
+        {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            background-color: #dbeafe;
+        }
+
+        ::-webkit-scrollbar
+        {
+            width: 6px;
+            background-color: #ffffff;
+        }
+
+        ::-webkit-scrollbar-thumb
+        {
+            background-color: #3b82f6;
+        }
+
+        ::-webkit-scrollbar-thumb:hover
+        {
+            background-color: #2563eb;
+        }
+    </style>
+
+    <div class="header-container bg-blue-100 rounded-xl py-4 px-6 m-5 flex justify-between items-center">
+        <div class="header-stuff">
+            <div class="header-title text-2xl font-bold">Interactive</div>
+            <div class="header-subtitle text-base">Geometry Genius</div>
+        </div>
+        <button id="btn-blog" onclick="modal()" class="btn-blog h-8 w-16 bg-blue-500 hover:bg-blue-600 rounded-md text-white">Blog</button>
+    </div>
+    <div class="main-container px-5 flex justify-between">
+        <div class="grid-container w-full grid grid-cols-3 gap-4">
+            <div class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
+                <img class="brightness-0 w-20 mx-auto mb-2" src="triangle.png" alt="">
+                <div class="title">Triangle</div>
+                <div class="formula mb-2">Area (A) = 0.5*b*h</div>
+                <div class="input-container mb-3 flex">
+                    <input id="triangle-input1" class="w-full bg-gray-200 rounded-md px-2 mr-2 focus:outline-none text-sm" type="text" placeholder="b">cm
+                    <input id="triangle-input2" class="w-full bg-gray-200 rounded-md px-2 ml-5 mr-2 focus:outline-none text-sm" type="text" placeholder="h">cm
+                </div>
+                <button id="btn-calculate-triangle" onclick="calculateTriangle()" class="calculate h-10 w-full bg-blue-500 hover:bg-blue-600 rounded-md text-white">Calculate</button>
+            </div>
+            <div class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
+                <img class="brightness-0 w-28 mx-auto mb-2" src="rectangle.png" alt="">
+                <div class="title">Rectangle</div>
+                <div class="formula mb-2">Area (A) = w*l</div>
+                <div class="input-container mb-3 flex">
+                    <input id="rectangle-input1" class="w-full bg-gray-200 rounded-md px-2 mr-2 focus:outline-none text-sm" type="text" placeholder="w">cm
+                    <input id="rectangle-input2" class="w-full bg-gray-200 rounded-md px-2 ml-5 mr-2 focus:outline-none text-sm" type="text" placeholder="l">cm
+                </div>
+                <button id="btn-calculate-rectangle" onclick="calculateRectangle()" class="calculate h-10 w-full bg-blue-500 hover:bg-blue-600 rounded-md text-white">Calculate</button>
+            </div>
+            <div class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
+                <img class="brightness-0 w-36 mx-auto mb-2" src="parallelogram.png" alt="">
+                <div class="title">Parallelogram</div>
+                <div class="formula mb-2">Area (A) = b*h</div>
+                <div class="input-container mb-3 flex">
+                    <input id="parallelogram-input1" class="w-full bg-gray-200 rounded-md px-2 mr-2 focus:outline-none text-sm" type="text" placeholder="b">cm
+                    <input id="parallelogram-input2" class="w-full bg-gray-200 rounded-md px-2 ml-5 mr-2 focus:outline-none text-sm" type="text" placeholder="h">cm
+                </div>
+                <button id="btn-calculate-parallelogram" onclick="calculateParallelogram()" class="calculate h-10 w-full bg-blue-500 hover:bg-blue-600 rounded-md text-white">Calculate</button>
+            </div>
+            <div class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
+                <img class="brightness-0 w-24 mx-auto mb-2" src="rhombus.png" alt="">
+                <div class="title">Rhombus</div>
+                <div class="formula mb-2 relative">Area (A) = 0.5*d<span class="text-xs relative bottom-[-3px]">1</span>*d<span class="text-xs relative bottom-[-3px]">2</span></div>
+                <div class="input-container mb-3 flex">
+                    <input id="rhombus-input1" class="w-full bg-gray-200 rounded-md px-2 mr-2 focus:outline-none text-sm" type="text" placeholder="d1">cm
+                    <input id="rhombus-input2" class="w-full bg-gray-200 rounded-md px-2 ml-5 mr-2 focus:outline-none text-sm" type="text" placeholder="d2">cm
+                </div>
+                <button id="btn-calculate-rhombus" onclick="calculateRhombus()" class="calculate h-10 w-full bg-blue-500 hover:bg-blue-600 rounded-md text-white">Calculate</button>
+            </div>
+            <div class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
+                <img class="brightness-0 w-20 mx-auto mb-2" src="pentagon.png" alt="">
+                <div class="title">Pentagon</div>
+                <div class="formula mb-2">Area (A) = 0.5*p*b</div>
+                <div class="input-container mb-3 flex">
+                    <input id="pentagon-input1" class="w-full bg-gray-200 rounded-md px-2 mr-2 focus:outline-none text-sm" type="text" placeholder="p">cm
+                    <input id="pentagon-input2" class="w-full bg-gray-200 rounded-md px-2 ml-5 mr-2 focus:outline-none text-sm" type="text" placeholder="b">cm
+                </div>
+                <button id="btn-calculate-pentagon" onclick="calculatePentagon()" class="calculate h-10 w-full bg-blue-500 hover:bg-blue-600 rounded-md text-white">Calculate</button>
+            </div>
+            <div class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
+                <img class="brightness-0 w-20 mx-auto mb-2 scale-150" src="ellipse.png" alt="">
+                <div class="title">Ellipse</div>
+                <div class="formula mb-2">Area (A) = <span class="font-bold text-lg">ℼ</span>*a*b</div>
+                <div class="input-container mb-3 flex">
+                    <input id="ellipse-input1" class="w-full bg-gray-200 rounded-md px-2 mr-2 focus:outline-none text-sm" type="text" placeholder="a">cm
+                    <input id="ellipse-input2" class="w-full bg-gray-200 rounded-md px-2 ml-5 mr-2 focus:outline-none text-sm" type="text" placeholder="b">cm
+                </div>
+                <button id="btn-calculate-ellipse" onclick="calculateEllipse()" class="calculate h-10 w-full bg-blue-500 hover:bg-blue-600 rounded-md text-white">Calculate</button>
+            </div>
+            
+            
+        </div>
+        <div class="result px-5 border rounded-lg w-2/5 ml-4 h-[80svh] overflow-y-scroll overflow-x-hidden">
+            <div class="title text-xl font-bold text-center mt-3">Area Calculation</div>
+            <div class="my-3 h-[1px] w-10/12 mx-auto bg-black"></div>
+            <div id="result-results" class="result-results"></div>
+        </div>
+    </div>
+    <script src="calculations.js"></script>
+</body>
+</html>
