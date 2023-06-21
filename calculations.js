@@ -4,7 +4,7 @@ var count = 1;
 function calculateTriangle(){
     let input1 = document.getElementById("triangle-input1").value;
     let input2 = document.getElementById("triangle-input2").value;
-    if (isNaN(input1) || isNaN(input2) || input1=="" || input2=="") {
+    if (isNaN(input1) || isNaN(input2) || input1=="" || input2=="" || input1<=0 || input2<=0) {
         alert("Kindly enter a valid input");
     }
     else{
@@ -20,7 +20,7 @@ function calculateTriangle(){
 function calculateRectangle(){
     let input1 = document.getElementById("rectangle-input1").value;
     let input2 = document.getElementById("rectangle-input2").value;
-    if (isNaN(input1) || isNaN(input2) || input1=="" || input2=="") {
+    if (isNaN(input1) || isNaN(input2) || input1=="" || input2=="" || input1<=0 || input2<=0) {
         alert("Kindly enter a valid input");
     }
     else{
@@ -36,7 +36,7 @@ function calculateRectangle(){
 function calculateParallelogram(){
     let input1 = document.getElementById("parallelogram-input1").value;
     let input2 = document.getElementById("parallelogram-input2").value;
-    if (isNaN(input1) || isNaN(input2) || input1=="" || input2=="") {
+    if (isNaN(input1) || isNaN(input2) || input1=="" || input2=="" || input1<=0 || input2<=0) {
         alert("Kindly enter a valid input");
     }
     else{
@@ -52,7 +52,7 @@ function calculateParallelogram(){
 function calculateRhombus(){
     let input1 = document.getElementById("rhombus-input1").value;
     let input2 = document.getElementById("rhombus-input2").value;
-    if (isNaN(input1) || isNaN(input2) || input1=="" || input2=="") {
+    if (isNaN(input1) || isNaN(input2) || input1=="" || input2=="" || input1<=0 || input2<=0) {
         alert("Kindly enter a valid input");
     }
     else{
@@ -68,7 +68,7 @@ function calculateRhombus(){
 function calculatePentagon(){
     let input1 = document.getElementById("pentagon-input1").value;
     let input2 = document.getElementById("pentagon-input2").value;
-    if (isNaN(input1) || isNaN(input2) || input1=="" || input2=="") {
+    if (isNaN(input1) || isNaN(input2) || input1=="" || input2=="" || input1<=0 || input2<=0) {
         alert("Kindly enter a valid input");
     }
     else{
@@ -84,7 +84,7 @@ function calculatePentagon(){
 function calculateEllipse(){
     let input1 = document.getElementById("ellipse-input1").value;
     let input2 = document.getElementById("ellipse-input2").value;
-    if (isNaN(input1) || isNaN(input2) || input1=="" || input2=="") {
+    if (isNaN(input1) || isNaN(input2) || input1=="" || input2=="" || input1<=0 || input2<=0) {
         alert("Kindly enter a valid input");
     }
     else{
