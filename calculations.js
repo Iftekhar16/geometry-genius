@@ -1,6 +1,11 @@
 var count = 1;
 
 
+function goToBlog() {
+    window.location.href = "blog.html";
+}
+
+
 function calculateTriangle(){
     let input1 = document.getElementById("triangle-input1").value;
     let input2 = document.getElementById("triangle-input2").value;
