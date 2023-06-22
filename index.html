@@ -38,16 +38,19 @@
         {
             -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
             background-color: #dbeafe;
+            border-radius: 50px;
         }
 
         ::-webkit-scrollbar
         {
+            height: 6px;
             width: 6px;
             background-color: #ffffff;
         }
 
         ::-webkit-scrollbar-thumb
         {
+            border-radius: 50px;
             background-color: #3b82f6;
         }
 
@@ -65,8 +68,8 @@
         <button id="btn-blog" onclick="goToBlog()" class="btn-blog h-8 w-16 bg-blue-500 hover:bg-blue-600 rounded-md text-white">Blog</button>
     </div>
     <div class="main-container px-5 flex justify-between">
-        <div class="grid-container w-full grid grid-cols-3 gap-4">
-            <div class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
+        <div class="grid-container w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div onmouseenter="randomColor1()" onmouseleave="setWhite1()" id="grid-item1" class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
                 <img class="brightness-0 w-20 mx-auto mb-2" src="images/triangle.png" alt="">
                 <div class="title">Triangle</div>
                 <div class="formula mb-2">Area (A) = 0.5*b*h</div>
@@ -76,7 +79,7 @@
                 </div>
                 <button id="btn-calculate-triangle" onclick="calculateTriangle()" class="calculate h-10 w-full bg-blue-500 hover:bg-blue-600 rounded-md text-white">Calculate</button>
             </div>
-            <div class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
+            <div onmouseenter="randomColor2()" onmouseleave="setWhite2()" id="grid-item2" class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
                 <img class="brightness-0 w-28 mx-auto mb-2" src="images/rectangle.png" alt="">
                 <div class="title">Rectangle</div>
                 <div class="formula mb-2">Area (A) = w*l</div>
@@ -86,7 +89,7 @@
                 </div>
                 <button id="btn-calculate-rectangle" onclick="calculateRectangle()" class="calculate h-10 w-full bg-blue-500 hover:bg-blue-600 rounded-md text-white">Calculate</button>
             </div>
-            <div class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
+            <div onmouseenter="randomColor3()" onmouseleave="setWhite3()" id="grid-item3" class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
                 <img class="brightness-0 w-36 mx-auto mb-2" src="images/parallelogram.png" alt="">
                 <div class="title">Parallelogram</div>
                 <div class="formula mb-2">Area (A) = b*h</div>
@@ -96,7 +99,7 @@
                 </div>
                 <button id="btn-calculate-parallelogram" onclick="calculateParallelogram()" class="calculate h-10 w-full bg-blue-500 hover:bg-blue-600 rounded-md text-white">Calculate</button>
             </div>
-            <div class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
+            <div onmouseenter="randomColor4()" onmouseleave="setWhite4()" id="grid-item4" class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
                 <img class="brightness-0 w-24 mx-auto mb-2" src="images/rhombus.png" alt="">
                 <div class="title">Rhombus</div>
                 <div class="formula mb-2 relative">Area (A) = 0.5*d<span class="text-xs relative bottom-[-3px]">1</span>*d<span class="text-xs relative bottom-[-3px]">2</span></div>
@@ -106,7 +109,7 @@
                 </div>
                 <button id="btn-calculate-rhombus" onclick="calculateRhombus()" class="calculate h-10 w-full bg-blue-500 hover:bg-blue-600 rounded-md text-white">Calculate</button>
             </div>
-            <div class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
+            <div onmouseenter="randomColor5()" onmouseleave="setWhite5()" id="grid-item5" class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
                 <img class="brightness-0 w-20 mx-auto mb-2" src="images/pentagon.png" alt="">
                 <div class="title">Pentagon</div>
                 <div class="formula mb-2">Area (A) = 0.5*p*b</div>
@@ -116,7 +119,7 @@
                 </div>
                 <button id="btn-calculate-pentagon" onclick="calculatePentagon()" class="calculate h-10 w-full bg-blue-500 hover:bg-blue-600 rounded-md text-white">Calculate</button>
             </div>
-            <div class="grid-item hover:bg-blue-100 duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
+            <div onmouseenter="randomColor6()" onmouseleave="setWhite6()" id="grid-item6" class="grid-item  duration-150 p-5 h-auto text-center rounded-lg border flex flex-col justify-center">
                 <img class="brightness-0 w-20 mx-auto mb-2 scale-150" src="images/ellipse.png" alt="">
                 <div class="title">Ellipse</div>
                 <div class="formula mb-2">Area (A) = <span class="font-bold text-lg">ℼ</span>*a*b</div>
@@ -129,7 +132,7 @@
             
             
         </div>
-        <div class="result px-5 border rounded-lg w-2/5 ml-4 h-[80svh] overflow-y-scroll overflow-x-hidden">
+        <div class="result px-5 border rounded-lg w-2/3 md:w-2/5 ml-4 h-[80svh] overflow-y-scroll ">
             <div class="title text-xl font-bold text-center mt-3">Area Calculation</div>
             <div class="my-3 h-[1px] w-10/12 mx-auto bg-black"></div>
             <div id="result-results" class="result-results"></div>

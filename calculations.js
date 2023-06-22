@@ -5,6 +5,62 @@ function goToBlog() {
     window.location.href = "blog.html";
 }
 
+// https://css-tricks.com/snippets/javascript/random-hex-color/
+
+
+
+function randomColor1(){
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    console.log("#"+randomColor);
+    document.getElementById("grid-item1").style.backgroundColor = "#"+randomColor;
+}
+function randomColor2(){
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    console.log("#"+randomColor);
+    document.getElementById("grid-item2").style.backgroundColor = "#"+randomColor;
+}
+function randomColor3(){
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    console.log("#"+randomColor);
+    document.getElementById("grid-item3").style.backgroundColor = "#"+randomColor;
+}
+function randomColor4(){
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    console.log("#"+randomColor);
+    document.getElementById("grid-item4").style.backgroundColor = "#"+randomColor;
+}
+function randomColor5(){
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    console.log("#"+randomColor);
+    document.getElementById("grid-item5").style.backgroundColor = "#"+randomColor;
+}
+function randomColor6(){
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    console.log("#"+randomColor);
+    document.getElementById("grid-item6").style.backgroundColor = "#"+randomColor;
+}
+
+
+
+function setWhite1(){
+    document.getElementById("grid-item1").style.backgroundColor = "white";
+}
+function setWhite2(){
+    document.getElementById("grid-item2").style.backgroundColor = "white";
+}
+function setWhite3(){
+    document.getElementById("grid-item3").style.backgroundColor = "white";
+}
+function setWhite4(){
+    document.getElementById("grid-item4").style.backgroundColor = "white";
+}
+function setWhite5(){
+    document.getElementById("grid-item5").style.backgroundColor = "white";
+}
+function setWhite6(){
+    document.getElementById("grid-item6").style.backgroundColor = "white";
+}
+
 
 function calculateTriangle(){
     let input1 = document.getElementById("triangle-input1").value;
